@@ -39,5 +39,11 @@
             <param name="id">Id of Inspection</param>
             <returns></returns>
         </member>
+        <member name="M:InspectionAPI.Controllers.InspectionTypesController.GetInspectionsType">
+            <summary>
+            Get All Inspection Type 
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
