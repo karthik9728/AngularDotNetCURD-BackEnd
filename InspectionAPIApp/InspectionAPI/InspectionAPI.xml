@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>InspectionAPI</name>
+    </assembly>
+    <members>
+        <member name="M:InspectionAPI.Controllers.InspectionController.GetInscpections">
+            <summary>
+            Get All Inspections From Database
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:InspectionAPI.Controllers.InspectionController.GetInspection(System.Int32)">
+            <summary>
+            Get Individual Inspection Data
+            </summary>
+            <param name="id">Inspection ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:InspectionAPI.Controllers.InspectionController.CreateInspection(InspectionAPI.DTO.InspectionDto)">
+            <summary>
+            Create New Inspection Data
+            </summary>
+            <param name="inspectionDto">Inspection Data</param>
+            <returns></returns>
+        </member>
+        <member name="M:InspectionAPI.Controllers.InspectionController.UpdateInspection(System.Int32,InspectionAPI.DTO.UpdateInspectionDto)">
+            <summary>
+            Update Inspection Data
+            </summary>
+            <param name="id">Id of Inspection</param>
+            <param name="updateInspectionDto">Update Inspection Data</param>
+            <returns></returns>
+        </member>
+        <member name="M:InspectionAPI.Controllers.InspectionController.DeleteInspection(System.Int32)">
+            <summary>
+            Delete Inspection Data
+            </summary>
+            <param name="id">Id of Inspection</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
