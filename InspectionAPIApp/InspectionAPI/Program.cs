@@ -7,6 +7,8 @@ using InspectionAPI.Repository.IRepository;
 using InspectionAPI.Repository;
 using System.Reflection;
 
+var myAllowSpeificOrigins = "_myAllowSpeificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -16,17 +18,29 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 
-#region
+#region Swagger Documentations
 
 builder.Services.AddSwaggerGen(options =>
 {
-    
-
     var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";   
     var xmlCommentFullPath = Path.Combine(AppContext.BaseDirectory ,xmlCommentFile);
     options.IncludeXmlComments(xmlCommentFullPath);
 });
 
+#endregion
+
+
+#region CORS Policy
+
+builder.Services.AddCors(oprtions =>
+{
+    oprtions.AddPolicy(name: myAllowSpeificOrigins,
+        builder =>
+        {
+            //builder.WithOrigins("http://locahost:4200").AllowAnyMethod().AllowAnyMethod();
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyMethod();
+        });
+});
 
 #endregion
 
@@ -54,6 +68,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(myAllowSpeificOrigins);
 
 app.UseAuthorization();
 
